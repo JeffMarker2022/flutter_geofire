@@ -1,22 +1,14 @@
-// Optional: If you don't need 'group' or 'version', you can remove these lines.
-group 'in.appyflow.geofire'
-version '1.0-SNAPSHOT'
-
-// Use the modern plugin syntax instead of apply plugin:
 plugins {
     id 'com.android.library'
 }
 
 android {
-    // Required for AGP 8.x and above
     namespace "in.appyflow.geofire"
-
-    // Choose an appropriate SDK version for your needs
-    compileSdkVersion 28
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 33
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,14 +17,11 @@ android {
     }
 }
 
-// Repositories needed to fetch dependencies
 repositories {
     google()
-    // jcenter() is deprecated, so only include if absolutely necessary:
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    // The existing dependency for the GeoFire Android library
     implementation 'com.firebase:geofire-android:3.1.0'
 }
