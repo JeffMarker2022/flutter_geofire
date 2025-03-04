@@ -1,42 +1,32 @@
-____group 'in.appyflow.geofire'
+// Remove or comment out the group/version lines if you don’t need them
+group 'in.appyflow.geofire'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
-    }
+// Use the modern plugins block instead of apply plugin:
+plugins {
+    id 'com.android.library'
 }
-
-rootProject.allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-apply plugin: 'com.android.library'
 
 android {
-    namespace "in.appyflow.geofire" // <-- add this line
-    compileSdkVersion 28
-    ...
-}
+    namespace "in.appyflow.geofire"
     compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 16
+        targetSdkVersion 28
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     lintOptions {
         disable 'InvalidPackage'
     }
 }
 
+// Add repositories here if needed
+repositories {
+    google()
+    jcenter()  // jcenter() is deprecated but still might be needed for older libs
+}
 
 dependencies {
     implementation 'com.firebase:geofire-android:3.1.0'
