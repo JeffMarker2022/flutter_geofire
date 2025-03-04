@@ -23,13 +23,13 @@ apply plugin: 'com.android.library'
 
 android {
     namespace "in.appyflow.geofire" // <-- add this line
-    compileSdkVersion 28
+    compileSdkVersion 34
     ...
 }
-    compileSdkVersion 28
+    compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 24
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
